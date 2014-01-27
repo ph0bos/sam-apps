@@ -11,7 +11,7 @@ This repo contains a collection of application templates for use with the SAM AP
 3. Run `bower install` to install the client components.
 4. Run `node server.js` to start the server.
 
-See our the documentation for [sam-node](https://github.com/SAMdesk//sam-node) and [sam-js](https://github.com/SAMdesk/sam-js) for more information on how to use these samples.
+See our the documentation for [sam-node](https://github.com/SAMdesk/sam-node) and [sam-js](https://github.com/SAMdesk/sam-js) for more information on how to use these samples.
 
 ## Author
 
