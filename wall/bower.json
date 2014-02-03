@@ -19,7 +19,7 @@
   "dependencies": {
     "sam-js": "https://github.com/SAMdesk/sam-js.git",
     "jquery": "~2.0.3",
-    "sam-less": "https://github.com/SAMdesk/sam-css.git",
+    "sam-css": "https://github.com/SAMdesk/sam-css.git",
     "isotope": "~1.5.26",
     "isotope-perfectmasonry": "*"
   }

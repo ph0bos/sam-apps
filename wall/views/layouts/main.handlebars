@@ -10,10 +10,16 @@
 
     <script src="components/prefix-free/prefixfree.min.js"></script>
     <script src="components/jquery/jquery.min.js"></script>
+    <script src="components/isotope/jquery.isotope.js"></script>
+    <script src="components/isotope-perfectmasonry/jquery.isotope.perfectmasonry.js"></script>
     <script src="components/sam-js/sam.min.js"></script>
     <script>
         $(function() {
-
+            $('#assets').isotope({
+                // options
+                itemSelector : '.asset',
+                layoutMode : 'perfectMasonry'
+            });
         });
     </script>
 </head>
@@ -101,7 +107,7 @@
 
     <!-- Main app content -->
     <div class="content">
-        <div class="wrapper">
+        <div id="assets" class="wrapper">
 
         {{{body}}}
 
