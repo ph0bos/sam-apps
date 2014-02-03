@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SAM Social Wall</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="components/sam-css/sam.min.css">
+    <link rel="stylesheet" type="text/css" href="components/sam-css/theme.sam.min.css">
+    <link rel="stylesheet" type="text/css" href="app.css">
+
+    <script src="components/prefix-free/prefixfree.min.js"></script>
+    <script src="components/jquery/jquery.min.js"></script>
+    <script src="components/sam-js/sam.min.js"></script>
+    <script>
+        $(function() {
+
+        });
+    </script>
+</head>
+<body>
+
+<!-- Main application wrapper -->
+<!--
+    App layout feature classes:
+    'layout-fluid' - responsive column with side gutters and vertical scrolling
+    'layout-fullscreen' - full screen width with no scrolling
+    'masthead-small' - app only has the main masthead
+    'masthead-full' - app has a full-sized masthead
+-->
+<div class="app layout-fluid masthead-full">
+
+    <!-- Header and filters -->
+    <header class="masthead">
+        <div class="wrapper">
+
+            <!-- Main header -->
+            <div class="main-header">
+
+                <!-- Masthead -->
+                <div class="pull-left">
+                    <div class="logo">
+                        <a href="http://www.samdesk.io" target="_blank">
+                            <img style="height:75px;width:134px" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhLS0gQ3JlYXRlZCB3aXRoIElua3NjYXBlIChodHRwOi8vd3d3Lmlua3NjYXBlLm9yZy8pIC0tPgoKPHN2ZwogICB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iCiAgIHhtbG5zOmNjPSJodHRwOi8vY3JlYXRpdmVjb21tb25zLm9yZy9ucyMiCiAgIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyIKICAgeG1sbnM6c3ZnPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICB2ZXJzaW9uPSIxLjEiCiAgIHdpZHRoPSI0MjYiCiAgIGhlaWdodD0iMjA2IgogICBpZD0ic3ZnMzAzOSI+CiAgPGRlZnMKICAgICBpZD0iZGVmczMwNDEiPgogICAgPGNsaXBQYXRoCiAgICAgICBpZD0iY2xpcFBhdGgxOCI+CiAgICAgIDxwYXRoCiAgICAgICAgIGQ9Ik0gMCw3NjggMTAyNCw3NjggMTAyNCwwIDAsMCAwLDc2OCB6IgogICAgICAgICBpZD0icGF0aDIwIiAvPgogICAgPC9jbGlwUGF0aD4KICA8L2RlZnM+CiAgPG1ldGFkYXRhCiAgICAgaWQ9Im1ldGFkYXRhMzA0NCI+CiAgICA8cmRmOlJERj4KICAgICAgPGNjOldvcmsKICAgICAgICAgcmRmOmFib3V0PSIiPgogICAgICAgIDxkYzpmb3JtYXQ+aW1hZ2Uvc3ZnK3htbDwvZGM6Zm9ybWF0PgogICAgICAgIDxkYzp0eXBlCiAgICAgICAgICAgcmRmOnJlc291cmNlPSJodHRwOi8vcHVybC5vcmcvZGMvZGNtaXR5cGUvU3RpbGxJbWFnZSIgLz4KICAgICAgICA8ZGM6dGl0bGU+PC9kYzp0aXRsZT4KICAgICAgPC9jYzpXb3JrPgogICAgPC9yZGY6UkRGPgogIDwvbWV0YWRhdGE+CiAgPGcKICAgICB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLC04NDYuMzYyMTgpIgogICAgIGlkPSJsYXllcjEiPgogICAgPGcKICAgICAgIHRyYW5zZm9ybT0ibWF0cml4KDEuMjQ5MjY2OSwwLDAsLTEuMjQ4NDg0OCwtNzQ1LjgxMjM0LDE0MTQuNDIyOCkiCiAgICAgICBpZD0iZzE0Ij4KICAgICAgPGcKICAgICAgICAgY2xpcC1wYXRoPSJ1cmwoI2NsaXBQYXRoMTgpIgogICAgICAgICBpZD0iZzE2IgogICAgICAgICBzdHlsZT0iZmlsbDojOTM5YWE4O2ZpbGwtb3BhY2l0eToxIj4KICAgICAgICA8ZwogICAgICAgICAgIHRyYW5zZm9ybT0idHJhbnNsYXRlKDc1NS44NzMsMzkyKSIKICAgICAgICAgICBpZD0iZzIyIgogICAgICAgICAgIHN0eWxlPSJmaWxsOiM5MzlhYTg7ZmlsbC1vcGFjaXR5OjEiPgogICAgICAgICAgPHBhdGgKICAgICAgICAgICAgIGQ9Ik0gMCwwIC0wLjEzNSwwIEMgLTAuMjcsMCAtMi43MDEsLTcuODcxIC00LjcyNywtMTMuMjczIEwgLTExLjQ3OSwtMzEgMTEuMzQ0LC0zMSA0LjU5MiwtMTMuMjczIEMgMi41NjUsLTcuODcxIDAuMTM1LDAgMCwwIgogICAgICAgICAgICAgaWQ9InBhdGgyNCIKICAgICAgICAgICAgIHN0eWxlPSJmaWxsOiM5MzlhYTg7ZmlsbC1vcGFjaXR5OjE7ZmlsbC1ydWxlOm5vbnplcm87c3Ryb2tlOm5vbmUiIC8+CiAgICAgICAgPC9nPgogICAgICAgIDxnCiAgICAgICAgICAgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoOTAwLDMyNSkiCiAgICAgICAgICAgaWQ9ImcyNiIKICAgICAgICAgICBzdHlsZT0iZmlsbDojOTM5YWE4O2ZpbGwtb3BhY2l0eToxIj4KICAgICAgICAgIDxwYXRoCiAgICAgICAgICAgICBkPSJtIDAsMCAtMjEsMCAwLDIzLjUzOCBDIC0yMSw0NS45NTYgLTIwLjk3MSw1NyAtMjEuMTA1LDU3IGwgLTAuMTM1LDAgYyAtMC4xMzYsMCAtNy42OTgsLTEyLjg1NCAtOC41MDksLTE0LjIwNCBMIC00MC44MjIsMjQgLTUyLjU3MSwyNCAtNjMuNjQ0LDQyLjc5NiBDIC02NC40NTMsNDQuMTQ2IC03Mi4wMTcsNTcgLTcyLjE1MSw1NyBsIC0wLjEzNiwwIEMgLTcyLjQyMyw1NyAtNzIsNDUuOTU2IC03MiwyMy41MzggTCAtNzIsMCBsIC0yMiwwIDAsOTUgMjEuNDQzLDAgMTcuNjkxLC0yOC40OTUgQyAtNDcuOTc5LDU1LjI5NyAtNDYuODk5LDUzIC00Ni43NjQsNTMgbCAwLjEzNSwwIGMgMC4xMzUsMCAxLjIxNiwyLjI5NyA4LjEwMywxMy41MDUgTCAtMjAuODM2LDk1IDAsOTUgMCwwIHogbSAtMTIwLjA5LDAgLTUuNDAxLDE1IC0zNy40MDcsMCAtNS40MDIsLTE1IC0yNC40NDIsMCAzNy44MTEsOTUgMjEuNDcyLDAgMzcuODEyLC05NSAtMjQuNDQzLDAgeiBtIC0xMDUuNDY2LC0xLjQ0MyBjIC0xOS43MTYsMCAtMzMuNzYsMTAuOTM3IC0zOS45NzIsMjguNjI4IGwgMjEuNzQxLDUuODA3IGMgMi40MzIsLTcuMTU3IDkuMTgzLC0xNC4zMTUgMTkuMTc2LC0xNC4zMTUgOC4xMDIsMCAxMS44ODQsMy43ODEgMTEuODg0LDguMzczIDAsNy41NjEgLTExLjA3NCw5LjQ1MyAtMjQuNTc4LDE0LjU4NCAtMTEuMzQzLDQuMzIyIC0yNC40NDIsMTAuNTM0IC0yNC40NDIsMjcuMTQzIDAsMTQuNzIgMTQuODU0LDI4LjA4OSAzNS4zODEsMjguMDg5IDE4LjA5NSwwIDMyLjQxLC0xMS4wNzMgMzYuODY2LC0yNS45MjggbCAtMjEuODc3LC01Ljk0MiBjIC0yLjI5Niw4LjM3MyAtOS41ODgsMTIuMjg5IC0xNi4zNCwxMi4yODkgLTYuNzUyLDAgLTEwLjY2OCwtMy4zNzYgLTEwLjY2OCwtNy4xNTcgMCwtNi4yMTIgOS40NTMsLTguNTA3IDIwLjkzMiwtMTIuNjkzIDE0LjA0NCwtNS4xMzIgMjguNzY0LC0xMy4xIDI4Ljc2NCwtMjkuMzA1IDAsLTE3LjI4NSAtMTQuODU1LC0yOS41NzMgLTM2Ljg2NywtMjkuNTczIE0gLTMwMywxMzAgLTMwMywxNi42MjQgLTI1MS4zNzYsLTM1IDM4LC0zNSBsIDAsMTY1IC0zNDEsMCB6IgogICAgICAgICAgICAgaWQ9InBhdGgyOCIKICAgICAgICAgICAgIHN0eWxlPSJmaWxsOiM5MzlhYTg7ZmlsbC1vcGFjaXR5OjE7ZmlsbC1ydWxlOm5vbnplcm87c3Ryb2tlOm5vbmUiIC8+CiAgICAgICAgPC9nPgogICAgICA8L2c+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4K">
+                        </a>
+                    </div>
+                    <h1>SAM Social Asset Wall</h1>
+                </div>
+
+                <!-- Filters -->
+                <div class="pull-right">
+                    <div id="mainFilters" class="btn-group" data-selected="0">
+                        <a data-id="0" class="btn-filter selected">All</a>
+                        <a data-id="1" class="btn-filter">Speakers</a>
+                        <a data-id="2" class="btn-filter">Official</a>
+                    </div>
+                    <div class="btn-group">
+                        <a id="onlyImages" class="btn-filter">Only Images</a>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /Main header -->
+
+            <!-- Optional navigation header for whatever -->
+            <div class="sub-header">
+
+                <!-- Put some stuff here -->
+                <div class="pull-left">
+                    <h2 id="storyName">{{name}}</h2>
+                </div>
+
+                <!-- Sub filters can go here -->
+                <div class="pull-right">
+
+                    <!-- Optional additional filters
+                    <div id="subFilters" class="btn-group small" data-selected="0">
+                        <a data-id="0" class="btn-filter selected">Lorem</a>
+                        <a data-id="1" class="btn-filter">Ipsum</a>
+                        <a data-id="2" class="btn-filter">Dolor</a>
+                    </div>
+                    <div class="btn-group small">
+                        <a id="onlyImages" class="btn-filter">Sit Amet</a>
+                    </div>
+                    -->
+
+                    <div class="btn-group">
+                        <div class="share-tray">
+                            <a>
+                                <img width="32" style="vertical-align:middle;margin-top: -6px;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KCgo8IS0tIFRoZSBpY29uIGNhbiBiZSB1c2VkIGZyZWVseSBpbiBib3RoIHBlcnNvbmFsIGFuZCBjb21tZXJjaWFsIHByb2plY3RzIHdpdGggbm8gYXR0cmlidXRpb24gcmVxdWlyZWQsIGJ1dCBhbHdheXMgYXBwcmVjaWF0ZWQuIApZb3UgbWF5IE5PVCBzdWItbGljZW5zZSwgcmVzZWxsLCByZW50LCByZWRpc3RyaWJ1dGUgb3Igb3RoZXJ3aXNlIHRyYW5zZmVyIHRoZSBpY29uIHdpdGhvdXQgZXhwcmVzcyB3cml0dGVuIHBlcm1pc3Npb24gZnJvbSBpY29ubW9uc3RyLmNvbSAtLT4KCgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgoKPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoKCSB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIj4KCjxwYXRoIGlkPSJ0d2l0dGVyLTQtaWNvbiIgZD0iTTI1Niw1MEMxNDIuMjI5LDUwLDUwLDE0Mi4yMjksNTAsMjU2czkyLjIyOSwyMDYsMjA2LDIwNnMyMDYtOTIuMjI5LDIwNi0yMDZTMzY5Ljc3MSw1MCwyNTYsNTB6CgoJIE0zNTkuNTk5LDIyMC41MDZjMy4wMjEsNjcuMTk5LTQ3LjA5NiwxNDIuMTI0LTEzNS44MDIsMTQyLjEyNGMtMjYuOTgxLDAtNTIuMDk2LTcuOTExLTczLjIzOC0yMS40NjYKCgljMjUuMzQ3LDIuOTg3LDUwLjY0Ni00LjA0NCw3MC43MzQtMTkuNzg2Yy0yMC45MDctMC4zODYtMzguNTU0LTE0LjE5OC00NC42MzItMzMuMTgxYzcuNDg2LDEuNDMyLDE0Ljg1MSwxLjAxMywyMS41NzUtMC44MTYKCgljLTIyLjk3Ni00LjYxNy0zOC44MzktMjUuMzE3LTM4LjMyMS00Ny40NTNjNi40NCwzLjU4LDEzLjgxLDUuNzI5LDIxLjY0Miw1Ljk3N2MtMjEuMjc4LTE0LjIyMS0yNy4zMDMtNDIuMzE4LTE0Ljc4NS02My43ODkKCgljMjMuNTYzLDI4LjkwNiw1OC43Nyw0Ny45MjgsOTguNDc4LDQ5LjkyYy02Ljk2OS0yOS44ODYsMTUuNzAyLTU4LjY2Nyw0Ni41NDItNTguNjY3YzEzLjc0MiwwLDI2LjE2LDUuODAyLDM0Ljg3NCwxNS4wODgKCgljMTAuODg0LTIuMTQzLDIxLjEwOC02LjExOSwzMC4zNDEtMTEuNTk0Yy0zLjU2NywxMS4xNTctMTEuMTQ0LDIwLjUyMS0yMS4wMDgsMjYuNDMzYzkuNjY1LTEuMTUzLDE4Ljg3NC0zLjcyMiwyNy40NDEtNy41MjMKCglDMzc3LjAzNSwyMDUuMzU1LDM2OC45MzUsMjEzLjc3MSwzNTkuNTk5LDIyMC41MDZ6Ii8+Cgo8L3N2Zz4KCg==">
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- /Optional navigation -->
+
+        </div>
+    </header>
+
+    <!-- Main app content -->
+    <div class="content">
+        <div class="wrapper">
+
+        {{{body}}}
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

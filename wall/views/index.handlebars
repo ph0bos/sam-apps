@@ -1,0 +1,57 @@
+<!--
+id: 52c709eda2f6442b08000024
+authorAvatarUrl: http://pbs.twimg.com/profile_images/3081561286/1aa10055278299b7b9e81fc43e2cc528_normal.jpeg
+authorDisplayName: GFreemanResist
+authorName: Gordon Freeman
+authorId: 961750514
+longText: RT @Excalibuurne: Oh putain c'était énorme XDDDD #Gmod @irochi330 http://t.co/3KjZ21mDJc
+shortText: RT @Excalibuurne: Oh putain c'était énorme XDDDD #Gmod @irochi330 http://t.co/3KjZ21mDJc
+postedDate: 1388760639000
+socialType: twitter
+publicId: 419118614961471488
+tags:
+media:
+    mediaType: "image"
+    mediaUrl: "http://pbs.twimg.com/media/BdD_0UaCYAAbUZo.jpg"
+    socialType: "twitter"
+    thumbnailUrl: "http://pbs.twimg.com/media/BdD_0UaCYAAbUZo."
+created: 2014-01-03T19:05:17.351Z
+-->
+
+{{#each socialAssets}}
+    <div class="asset text">
+
+        <div class="asset-gutter">
+            <div class="author-pic" style="background-image:url({{media.0.mediaUrl}})">
+                <i class="provider" data-from="{{socialType}}"></i>
+            </div>
+        </div>
+
+        <div class="asset-content">
+            <header class="group g-header">
+                <h2>
+                    <span class="author">{{authorName}}</span>
+                    <span class="handle"><em>@{{authorDisplayName}}</em></span>
+                </h2>
+                <h3 class="timestamp">
+                    <a href="#" rel="subtle">{{timeago postedDate}}</a>
+                    <a href="#" rel="subtle">{{datetime postedDate}}</a>
+                </h3>
+            </header>
+
+            <p class="group g-content">{{longText}}</p>
+
+            {{!-- <div class="group g-meta">
+                <span class="stats">
+                    <!--<span><strong>from</strong> Location</span>-->
+                    <!--<span class="break">
+                        <span><strong>999</strong> retweets</span>
+                        <var>&middot;</var>
+                        <span><strong>999</strong> favorites</span>
+                    </span>-->
+                </span>
+            </div> --}}
+        </div>
+
+    </div>
+{{/each}}
