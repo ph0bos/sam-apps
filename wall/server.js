@@ -3,10 +3,9 @@
  */
 
 var PORT       = 3001,
-    //APP_KEY    = 'abc123',
-    APP_KEY    = '1puqINX0vrCYGDL6',
-    //APP_SECRET = 'ssh-secret',
-    APP_SECRET = 'hfu3s2kvLvfdpU4tV3YINaaqm0Q72N58';
+    APP_KEY    = 'abc123',
+    APP_SECRET = 'ssh-secret',
+    STORY_ID   = '52dd6778ff766c4416e83b20';
 
 var express = require('express'),
     exphbs  = require('express3-handlebars'),
@@ -14,7 +13,7 @@ var express = require('express'),
     http    = require('http'),
     path    = require('path'),
     api     = require('./routes/api.js')(APP_KEY, APP_SECRET),
-    routes  = require('./routes/routes.js')(api.api, '52dd6778ff766c4416e83b20'),
+    routes  = require('./routes/routes.js')(api.api, STORY_ID),
     app     = express();
 
 
