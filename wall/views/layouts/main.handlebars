@@ -15,11 +15,43 @@
     <script src="components/sam-js/sam.min.js"></script>
     <script>
         $(function() {
+            var filters = '';
+            var media = '';
+
             $('#assets').isotope({
                 // options
                 itemSelector : '.asset',
                 layoutMode : 'perfectMasonry'
             });
+
+            $('#mainFilters .btn-filter').click(function(e) {
+                var $this = $(this);
+
+                if($this.data('tag') === '*') {
+                    $('#assets').isotope({filter: '.asset'+media});
+                    filters = '.asset';
+                } else {
+                    $('#assets').isotope({filter: '[data-tags~='+$this.data('tag')+']'+media});
+                    filters = '[data-tags~='+$this.data('tag')+']';
+                }
+
+                $('#mainFilters .btn-filter').removeClass('selected');
+                $this.addClass('selected');
+            });
+
+            $('#onlyImages').click(function(e){
+                var $this = $(this);
+
+                if($this.hasClass('selected')) {
+                    $('#assets').isotope({filter: filters});
+                    media = '';
+                } else {
+                    $('#assets').isotope({filter: filters+'.media'});
+                    media = '.media';
+                }
+
+                $this.toggleClass('selected');
+            })
         });
     </script>
 </head>
@@ -55,12 +87,12 @@
                 <!-- Filters -->
                 <div class="pull-right">
                     <div id="mainFilters" class="btn-group" data-selected="0">
-                        <a data-id="0" class="btn-filter selected">All</a>
-                        <a data-id="1" class="btn-filter">Speakers</a>
-                        <a data-id="2" class="btn-filter">Official</a>
+                        <a data-id="0" data-tag="*" class="btn-filter selected">All</a>
+                        <a data-id="1" data-tag="breaking" class="btn-filter">Breaking</a>
+                        <a data-id="2" data-tag="highlight" class="btn-filter">Highlighted</a>
                     </div>
                     <div class="btn-group">
-                        <a id="onlyImages" class="btn-filter">Only Images</a>
+                        <a id="onlyImages" data-class="media" class="btn-filter">Only Images</a>
                     </div>
                 </div>
 

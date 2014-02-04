@@ -19,10 +19,10 @@ created: 2014-01-03T19:05:17.351Z
 -->
 
 {{#each socialAssets}}
-    <div class="asset text">
+    <div class="asset text{{#if media}} media{{/if}}" data-tags="{{tagattrs tags}}"{{#if media}} style="background-image:url('{{media.0.mediaUrl}}')"{{/if}}>
 
         <div class="asset-gutter">
-            <div class="author-pic" style="background-image:url({{media.0.mediaUrl}})">
+            <div class="author-pic" style="background-image:url({{authorAvatarUrl}})">
                 <i class="provider" data-from="{{socialType}}"></i>
             </div>
         </div>

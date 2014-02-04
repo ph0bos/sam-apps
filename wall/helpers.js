@@ -55,9 +55,22 @@ function Helpers() {
         return month+' '+day+', '+hours+':'+minutes;
     }
 
+    function tagattrs(srctags) {
+        var tag, tags = '';
+
+        for(var i = 0; i < srctags.length; i++) {
+            tag = srctags[i];
+            tag = tag.replace(/\W/g, '').toLowerCase();
+            tags += tag+(i===srctags.length-1?'':' ');
+        }
+
+        return tags;
+    }
+
     return {
         timeago: timeago,
-        datetime: datetime
+        datetime: datetime,
+        tagattrs: tagattrs
     }
 }
 

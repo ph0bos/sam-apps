@@ -25,7 +25,8 @@ var hbs = exphbs.create({
     defaultLayout: 'main',
     helpers: {
         timeago: helpers.timeago,
-        datetime: helpers.datetime
+        datetime: helpers.datetime,
+        tagattrs: helpers.tagattrs
     }
 });
 
