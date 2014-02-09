@@ -8,21 +8,31 @@ function ApiRoutes(key, secret) {
     }
 
     // Get a list of stories
-    function stories(req, res){
+    function stories(req, res) {
         sam.stories.list(function(err, data) { callback(res, err, data); });
     };
 
     // Get the contents of a story
-    function story(req, res){
+    function story(req, res) {
         sam.stories.fetch(
             req.param('id'),
             function(err, data) { callback(res, err, data); }
         );
     };
 
+    // Get a recently added asset
+    function asset(req, res) {
+        sam.assets.fetch(
+            req.param('storyId'),
+            req.param('assetId'),
+            function(err, data) { callback(res, err, data); }
+        )
+    };
+
     return {
         stories: stories,
         story: story,
+        asset: asset,
         api: sam
     };
 

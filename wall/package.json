@@ -8,7 +8,8 @@
   "dependencies": {
     "express": "3.4.8",
     "ejs": "*",
-    "sam": "https://github.com/SAMdesk/sam-node/tarball/master"
+    "sam": "https://github.com/SAMdesk/sam-node/tarball/master",
+    "socket.io": "~0.9.16"
   },
   "devDependencies": {
     "bower": "~1.2.8",

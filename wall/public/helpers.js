@@ -57,6 +57,7 @@ function Helpers() {
 
     function tagattrs(srctags) {
         var tag, tags = '';
+        srctags = srctags || [];
 
         for(var i = 0; i < srctags.length; i++) {
             tag = srctags[i];
@@ -74,4 +75,4 @@ function Helpers() {
     }
 }
 
-module.exports = Helpers;
+if (typeof(module) != 'undefined') module.exports = Helpers;

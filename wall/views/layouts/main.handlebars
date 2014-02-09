@@ -12,8 +12,47 @@
     <script src="components/jquery/jquery.min.js"></script>
     <script src="components/isotope/jquery.isotope.js"></script>
     <script src="components/isotope-perfectmasonry/jquery.isotope.perfectmasonry.js"></script>
+    <script src="components/handlebars/handlebars.min.js"></script>
     <script src="components/sam-js/sam.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="helpers.js"></script>
+    <script id="asset-template" type="text/x-handlebars-template">
+        <div data-id="\{{id}}" class="asset text\{{#if media}} media\{{/if}}" data-tags="\{{tagattrs tags}}"\{{#if media}} style="background-image:url('\{{media.0.mediaUrl}}')"\{{/if}}>
+
+            <div class="asset-gutter">
+                <div class="author-pic" style="background-image:url(\{{authorAvatarUrl}})">
+                    <i class="provider" data-from="\{{socialType}}"></i>
+                </div>
+            </div>
+
+            <div class="asset-content">
+                <header class="group g-header">
+                    <h2>
+                        <span class="author">\{{authorName}}</span>
+                        <span class="handle"><em>@\{{authorDisplayName}}</em></span>
+                    </h2>
+                    <h3 class="timestamp">
+                        <a href="#" rel="subtle">\{{timeago postedDate}}</a>
+                        <a href="#" rel="subtle">\{{datetime postedDate}}</a>
+                    </h3>
+                </header>
+
+                <p class="group g-content">\{{longText}}</p>
+
+            </div>
+
+        </div>
+    </script>
+
     <script>
+        var source = $('#asset-template').html();
+        var assetTemplate = Handlebars.compile(source);
+
+        var helpers = Helpers();
+        Handlebars.registerHelper('tagattrs', helpers.tagattrs);
+        Handlebars.registerHelper('timeago', helpers.timeago);
+        Handlebars.registerHelper('datetime', helpers.datetime);
+
         $(function() {
             var filters = '';
             var media = '';
@@ -52,6 +91,24 @@
 
                 $this.toggleClass('selected');
             })
+        });
+
+        var socket = io.connect('/');
+        socket.on('event', function(event) {
+            switch(event.type) {
+                case 'story:asset:add':
+                    var html = assetTemplate(event.data);
+                    $('#assets').isotope('insert', $(html));
+                    break;
+                case 'story:asset:delete':
+                    var $asset = $('#assets > [data-id="' + event.data.id + '"]');
+                    $('#assets').isotope('remove', $asset);
+                case 'story:asset:tag':
+                case 'story:asset:untag':
+                    var $asset = $('#assets > [data-id="' + event.data.id + '"]');
+                    $asset.attr('data-tags', helpers.tagattrs(event.data.tags));
+                    break;
+            }
         });
     </script>
 </head>

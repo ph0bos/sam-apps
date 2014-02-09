@@ -9,7 +9,7 @@ var PORT       = 3001,
 
 var express = require('express'),
     exphbs  = require('express3-handlebars'),
-    helpers = require('./helpers.js')(),
+    helpers = require('./public/helpers.js')(),
     http    = require('http'),
     path    = require('path'),
     api     = require('./routes/api.js')(APP_KEY, APP_SECRET),
@@ -23,6 +23,7 @@ var express = require('express'),
 
 var hbs = exphbs.create({
     defaultLayout: 'main',
+    layoutsDir: path.join(__dirname, 'views/layouts'),
     helpers: {
         timeago: helpers.timeago,
         datetime: helpers.datetime,
@@ -37,6 +38,7 @@ var hbs = exphbs.create({
 
 app.configure(function() {
     app.set('port', PORT);
+    app.set('views', path.join(__dirname, 'views'));
 
     app.use(express.json());
     app.use(express.urlencoded());
@@ -66,12 +68,23 @@ app.get('/', routes.index);
 // Internal API
 app.get('/sam/stories', api.stories);
 app.get('/sam/stories/:id', api.story);
+app.get('/sam/stories/:storyId/assets/:assetId', api.asset)
 
 
 /**
  * Initialization
  */
 
-http.createServer(app).listen(app.get('port'), function(){
+var server = http.createServer(app);
+server.listen(app.get('port'), function() {
     console.log('Express server listening on port ' + app.get('port'));
+});
+
+/**
+ * Socket.io Initialization
+ */
+var io = require('socket.io').listen(server);
+app.post('/webhook', function(req, res) {
+    var event = req.body;
+    io.sockets.emit('event', event);
 });

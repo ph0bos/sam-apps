@@ -15,11 +15,15 @@ function PublicRoutes(sam, storyId) {
         sam.stories.fetch(
             storyId,
             function(err, data) {
-                if(data.socialAssets) {
-                    sortDate(data.socialAssets);
-                    res.render('index', data);
+                if (err) {
+                    res.json('500', { error: err });
                 } else {
-                    res.json('500', {msg:'wtf'});
+                    if(data && data.socialAssets) {
+                        sortDate(data.socialAssets);
+                        res.render('index', data);
+                    } else {
+                        res.json('500', { error: 'no data received' });
+                    }
                 }
             }
         );

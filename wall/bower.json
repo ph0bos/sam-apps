@@ -21,6 +21,7 @@
     "jquery": "~2.0.3",
     "sam-css": "https://github.com/SAMdesk/sam-css.git",
     "isotope": "~1.5.26",
-    "isotope-perfectmasonry": "*"
+    "isotope-perfectmasonry": "*",
+    "handlebars": "~1.3.0"
   }
 }
